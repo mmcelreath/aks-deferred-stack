@@ -21,6 +21,7 @@ provider "random" "main" {}
 provider "azurerm" "main" {
   config {
     features {}
+    skip_provider_registration = true
     use_cli              = false
     use_oidc             = true
     subscription_id      = var.azure_subscription_id
