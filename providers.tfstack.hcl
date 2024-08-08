@@ -27,7 +27,8 @@ provider "azurerm" "main" {
     subscription_id      = var.azure_subscription_id
     tenant_id            = var.azure_tenant_id
     oidc_token_file_path = var.identity_token_file
-    client_id = "081f65c4-7040-4a46-9ce9-790799f921fe"
+
+    client_id = "38665fa8-3166-41c8-bdf6-62c4ef26eb1e/federatedIdentityCredential/081f65c4-7040-4a46-9ce9-790799f921fe"
   }
 }
 
