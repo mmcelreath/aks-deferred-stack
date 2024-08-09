@@ -36,6 +36,8 @@ resource "azurerm_kubernetes_cluster" "default" {
   resource_group_name = azurerm_resource_group.default.name
   dns_prefix          = local.cluster_name
 
+  kubernetes_version = var.kubernetes_version
+
   default_node_pool {
     name       = "demo"
     node_count = 1

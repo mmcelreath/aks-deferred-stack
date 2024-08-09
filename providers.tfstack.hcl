@@ -28,7 +28,7 @@ provider "azurerm" "main" {
 
     subscription_id      = var.azure_subscription_id
     tenant_id            = var.azure_tenant_id
-    client_id            = "a81eeebf-f321-429d-ace4-fe22abec9e5b" # ID of azuread_service_principal
+    client_id            = var.azure_client_id
   }
 }
 
