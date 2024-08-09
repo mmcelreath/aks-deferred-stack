@@ -21,12 +21,13 @@ provider "random" "main" {}
 provider "azurerm" "main" {
   config {
     features {}
-    skip_provider_registration = true
     use_cli              = false
     use_oidc             = true
+
+    oidc_token_file_path = var.identity_token_file
+
     subscription_id      = var.azure_subscription_id
     tenant_id            = var.azure_tenant_id
-    oidc_token_file_path = var.identity_token_file
     client_id            = "a81eeebf-f321-429d-ace4-fe22abec9e5b" # ID of azuread_service_principal
   }
 }
