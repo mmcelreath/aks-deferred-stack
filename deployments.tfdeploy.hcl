@@ -10,9 +10,11 @@ deployment "demo" {
     cluster_name          = "stacks-demo"
     kubernetes_version    = "1.30"
     location              = "westeurope"
-    azure_tenant_id       = "237fbc04-c52a-458b-af97-eaf7157c0cd4"
-    azure_subscription_id = "c24643bf-3ef8-4f56-8a9c-adc6ec9c3633"
-    azure_client_id       = "a81eeebf-f321-429d-ace4-fe22abec9e5b"
+
     identity_token_file   = identity_token.azure.jwt_filename
+
+    azure_subscription_id = "c24643bf-3ef8-4f56-8a9c-adc6ec9c3633"
+    azure_tenant_id       = "237fbc04-c52a-458b-af97-eaf7157c0cd4"
+    azure_client_id       = "174af416-2156-4916-bd9a-e5ff501b066f"
   }
 }
