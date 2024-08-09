@@ -6,10 +6,10 @@ required_providers {
     source  = "hashicorp/azurerm"
     version = "~> 3.114.0"
   }
-  # kubernetes = {
-  #   source  = "hashicorp/kubernetes"
-  #   version = "~> 2.31.0"
-  # }
+  kubernetes = {
+    source  = "hashicorp/kubernetes"
+    version = "~> 2.31.0"
+  }
   random = {
     source = "hashicorp/random"
     version = "~> 3.6.2"
@@ -32,11 +32,11 @@ provider "azurerm" "main" {
   }
 }
 
-# provider "kubernetes" "main" {
-#   config {
-#     host                   = component.cluster.cluster_url
-#     cluster_ca_certificate = component.cluster.cluster_ca
-#     client_key             = component.cluster.cluster_client_key
-#     client_certificate     = component.cluster.cluster_client_certificate
-#   }
-# }
+provider "kubernetes" "main" {
+  config {
+    host                   = component.cluster.cluster_url
+    cluster_ca_certificate = component.cluster.cluster_ca
+    client_key             = component.cluster.cluster_client_key
+    client_certificate     = component.cluster.cluster_client_certificate
+  }
+}
