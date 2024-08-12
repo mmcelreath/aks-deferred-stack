@@ -12,4 +12,6 @@ It leverages deferred actions to enable users to create all the resources in the
     * Creates the ODIC IDP configuration in Azure which enables HCP Terraform workload identity authentication from Stacks.
     * Creates the Stack itself in HCP Terraform. It doesn't configure it for the custom agent pool mentioned above due to limitations in the TFE provider.
     
-2. Fetch configuration in the Stack UI to trigger the plan / apply cycle.
+2. Copy the value of the `oidc_client_id` output from the `_setup` module to the `deployment` block into the `azure_client_id` attribute.
+
+3. Fetch configuration in the Stack UI to trigger the plan / apply cycle.
