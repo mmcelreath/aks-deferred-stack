@@ -12,7 +12,7 @@ component "cluster" {
   inputs = {
     cluster_name       = var.cluster_name
     kubernetes_version = var.kubernetes_version
-    location = var.location
+    location           = var.location
   }
 }
 

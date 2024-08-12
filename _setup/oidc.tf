@@ -50,7 +50,7 @@ resource "azurerm_role_assignment" "tfc_role_assignment" {
 # https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/application_federated_identity_credential
 resource "azuread_application_federated_identity_credential" "tfc_federated_credential_plan" {
   application_id        = azuread_application.tfc_application.id
-  display_name          = "my-tfc-federated-credential-plan"
+  display_name          = "${azuread_application.tfc_application.display_name}-credential-plan"
   audiences             = [var.tfc_audience]
   issuer                = "https://${var.tfc_hostname}"
   subject               = "organization:${data.tfe_organization.stacks-org.id}:project:${data.tfe_project.stacks-proj.id}:stack:${tfe_stack.demo.id}:deployment:${var.tfc_stack_deployment}:operation:plan"
@@ -62,7 +62,7 @@ resource "azuread_application_federated_identity_credential" "tfc_federated_cred
 # https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/application_federated_identity_credential
 resource "azuread_application_federated_identity_credential" "tfc_federated_credential_apply" {
   application_id        = azuread_application.tfc_application.id
-  display_name          = "my-tfc-federated-credential-apply"
+  display_name          = "${azuread_application.tfc_application.display_name}-credential-apply"
   audiences             = [var.tfc_audience]
   issuer                = "https://${var.tfc_hostname}"
   subject               = "organization:${data.tfe_organization.stacks-org.id}:project:${data.tfe_project.stacks-proj.id}:stack:${tfe_stack.demo.id}:deployment:${var.tfc_stack_deployment}:operation:apply"
