@@ -13,8 +13,8 @@ deployment "demo" {
 
     identity_token_file   = identity_token.azure.jwt_filename
 
-    azure_subscription_id = "c24643bf-3ef8-4f56-8a9c-adc6ec9c3633"
-    azure_tenant_id       = "237fbc04-c52a-458b-af97-eaf7157c0cd4"
-    azure_client_id       = "11948356-4e66-404c-99ed-b0c6452afc68"
+    azure_subscription_id = "4a2ff90e-c796-4555-acdb-1bff040071db"
+    azure_tenant_id       = "d3fdf2cb-8ef1-4940-8043-69170342d935"
+    azure_client_id       = "71975bc3-1447-42bf-9415-f13200cf91fe"
   }
 }
